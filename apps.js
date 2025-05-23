@@ -60,5 +60,66 @@ sign.addEventListener("click", () => {
     tri.classList.toggle("active");
     document.body.classList.toggle("stop-scroll");
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Create modal container
+  const modal = document.createElement("div");
+  modal.style.position = "fixed";
+  modal.style.top = "0";
+  modal.style.left = "0";
+  modal.style.width = "100%";
+  modal.style.height = "100%";
+  modal.style.backgroundColor = "rgba(0,0,0,0.5)";
+  modal.style.display = "flex";
+  modal.style.justifyContent = "center";
+  modal.style.alignItems = "center";
+  modal.style.zIndex = "1000";
+
+  // Create modal content box
+  const modalContent = document.createElement("div");
+  modalContent.style.backgroundColor = "#fff";
+  modalContent.style.padding = "20px";
+  modalContent.style.borderRadius = "10px";
+  modalContent.style.maxWidth = "500px";
+  modalContent.style.width = "90%";
+  modalContent.style.textAlign = "center";
+  modalContent.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+
+  // Heading
+  const heading = document.createElement("h2");
+  heading.textContent = "Disclaimer";
+
+  // Paragraph
+  const paragraph = document.createElement("p");
+  paragraph.textContent = "This is a student project and not a real Amazon website. Do not enter any personal or payment information.";
+
+  // Button
+  const button = document.createElement("button");
+  button.textContent = "I Understand";
+  button.style.backgroundColor = "#ff9900";
+  button.style.border = "none";
+  button.style.color = "#fff";
+  button.style.padding = "10px 20px";
+  button.style.marginTop = "15px";
+  button.style.borderRadius = "5px";
+  button.style.cursor = "pointer";
+  button.style.fontWeight = "bold";
+
+  // Close modal on button click
+  button.addEventListener("click", () => {
+    modal.remove();
+  });
+
+  // Append all to modalContent
+  modalContent.appendChild(heading);
+  modalContent.appendChild(paragraph);
+  modalContent.appendChild(button);
+
+  // Append modalContent to modal
+  modal.appendChild(modalContent);
+
+  // Append modal to body
+  document.body.appendChild(modal);
+});
+
        
 
